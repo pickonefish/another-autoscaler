@@ -1,5 +1,6 @@
 import os
 from croniter import croniter
+import pytz
 from datetime import date, datetime, timezone, timedelta
 from dateutil import parser
 from logs import Logs
@@ -106,7 +107,10 @@ class AAutoscaler:
 
     def execute(self):
         # Current time in UTC format
-        currentTime = datetime.now(tz=timezone.utc)
+        tz = timezone.utc
+        if 'TZ' in os.environ:
+          tz = pytz.timezone(os.environ.get('TZ'))
+        currentTime = datetime.now(tz=tz)
 
         # For each namespace
         self.logs.info({'message': 'Getting list of namespaces.'})

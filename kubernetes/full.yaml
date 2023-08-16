@@ -48,6 +48,7 @@ data:
   LOG_LEVEL: "DEBUG"
   LOG_FORMAT: "JSON"
   CHECK_EVERY: "5"
+  TZ: 'Asia/Taipei'
 
 ---
 apiVersion: apps/v1
@@ -70,7 +71,7 @@ spec:
       serviceAccountName: another-autoscaler
       containers:
       - name: another-autoscaler
-        image: ghcr.io/dignajar/another-autoscaler:latest # Change the tag for the latest stable version
+        image: pickonefish/another-autoscaler:20230816 # Change the tag for the latest stable version
         imagePullPolicy: Always
         envFrom:
         - configMapRef:

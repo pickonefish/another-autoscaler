@@ -71,7 +71,7 @@ spec:
       serviceAccountName: another-autoscaler
       containers:
       - name: another-autoscaler
-        image: pickonefish/another-autoscaler:20230816 # Change the tag for the latest stable version
+        image: pickonefish/another-autoscaler:20230816-2 # Change the tag for the latest stable version
         imagePullPolicy: Always
         envFrom:
         - configMapRef:

@@ -22,7 +22,7 @@ Another Autoscaler is a perfect combination with [Cluster Autoscaler](https://gi
 ## Installation
 ```
 # Deploy Another Autoscaler into Kubernetes on "another" namespace
-kubectl apply -f https://raw.githubusercontent.com/dignajar/another-autoscaler/master/kubernetes/full.yaml
+kubectl apply -f https://raw.githubusercontent.com/pickonefish/another-autoscaler/master/kubernetes/full.yaml
 
 # Check if Another Autoscaler is working
 kubectl get pods -n another
